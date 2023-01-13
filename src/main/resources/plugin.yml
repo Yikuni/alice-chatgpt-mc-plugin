@@ -1,0 +1,14 @@
+name: AliceChatgptPlugin
+version: '${project.version}'
+main: com.yikuni.mc.alicechatgptmcplugin.AliceChatgptPlugin
+api-version: 1.19
+authors: [ yikuni ]
+description: Chatgpt for MC server
+
+commands:
+  chatgpt:
+    aliases: [gpt]
+
+permissions:
+  chatgpt:
+    default: op
