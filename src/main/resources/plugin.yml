@@ -12,3 +12,6 @@ commands:
 permissions:
   chatgpt:
     default: op
+
+depend:
+  - RumiyaLib

@@ -12,7 +12,7 @@ import org.bukkit.entity.Player
 
 @YikuniCommand(value = "chatgpt", permission = "chatgpt")
 class ChatgptCommand: CommandExecutor, TabCompleter {
-    private val usage = "${ChatColor.YELLOW} --------${ChatColor.WHITE} Help Raffle ${ChatColor.YELLOW}--------\n" +
+    private val usage = "${ChatColor.YELLOW} --------${ChatColor.WHITE} Help Chatgpt ${ChatColor.YELLOW}--------\n" +
             "${ChatColor.GRAY} Below is a help list of Raffle command \n" +
             "${ChatColor.GRAY}/chatgpt   进入AI聊天频道\n" +
             "${ChatColor.GRAY}/chatgpt create <设定>   创建特定设定的聊天\n" +
@@ -68,7 +68,6 @@ class ChatgptCommand: CommandExecutor, TabCompleter {
                         sender.sender().error("未检测到有效的会话")
                     }else{
                         ChatgptChannelManager.deleteChannel(sender)
-                        sender.sender().success("会话已结束")
                     }
                     true
                 }

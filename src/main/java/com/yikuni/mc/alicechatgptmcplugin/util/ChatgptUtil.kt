@@ -12,10 +12,11 @@ suspend fun createConversation(prompt: String? = null): String{
     return request.execute().body()
 }
 
-suspend fun sendConversationMessage(id: String): String{
+suspend fun sendConversationMessage(id: String, msg: String): String{
     val request = HttpUtil.createPost("${AliceChatgptPlugin.HOST}/chatgpt/chat")
         .header("token", AliceChatgptPlugin.TOKEN)
         .header("conversation", id)
+        .body(msg)
     return request.execute().body()
 }
 

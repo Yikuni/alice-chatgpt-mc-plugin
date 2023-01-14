@@ -23,7 +23,7 @@ class ChatgptChannel(private val player: Player, prompt: String? = null) {
     fun chat(message: String){
         replied = false
         CoroutineScope(Dispatchers.Default).launch {
-            val reply = sendConversationMessage(message)
+            val reply = sendConversationMessage(conversationId, message)
             player.sendMessage("${ChatColor.DARK_GREEN}AI: $reply")
             replied = true
         }
@@ -32,7 +32,7 @@ class ChatgptChannel(private val player: Player, prompt: String? = null) {
     fun finish(){
         CoroutineScope(Dispatchers.Default).launch {
             finishConversation(conversationId)
-            player.sender().info("会话已结束")
+            player.sender().success("会话已结束")
         }
     }
 
